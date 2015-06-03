@@ -7,7 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<h1>GET OUT and PLAY</h1>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<!-- backbone code -->
+  <!-- <div id="activity"></div>
+  <div id="details"></div>
+	<div id="form-container"></div>
+	<div id="activities-list"></div> -->
 <%= yield %>
 
 </body>

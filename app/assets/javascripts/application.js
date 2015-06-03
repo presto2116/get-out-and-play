@@ -13,4 +13,27 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require underscore
+//= require backbone
+//= require handlebars.runtime
+//= require_tree ./lib/templates
+//= require_tree ./lib/backbone/routers
+//= require_tree ./lib/backbone/models
+//= require_tree ./lib/backbone/collections
+//= require_tree ./lib/backbone/views
+//= require backbone_rails_sync
+//= require backbone_datalink
 //= require_tree .
+
+var domReady = function domReady () {
+		var router = new ActivitiesRouter();
+		Backbone.history.start();
+}
+var pageReady = function pageReady(){
+	var router = new ActivitiesRouter();
+		Backbone.history.stop()
+    Backbone.history.start()
+}
+
+// $(document).ready(domReady);
+// $(document).on('page:load', pageReady);
