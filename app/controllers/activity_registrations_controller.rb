@@ -12,7 +12,7 @@ class ActivityRegistrationsController < ApplicationController
 
     @activity_registration = @activity.activity_registrations.find_or_create_by(:user_id => current_user.id)
     @activity_registration.user_id = current_user.id
-    @activity_registration.user_name = current_user.email
+    @activity_registration.user_name = current_user.username
     @activity_registration.activity_id = @activity.id
       if @activity_registration.save
         redirect_to @activity

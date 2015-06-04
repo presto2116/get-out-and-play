@@ -10,13 +10,14 @@ Rails.application.routes.draw do
 
   resources :activities do
     resources :activity_registrations
+    resources :comments
   end
 
-  resources :comments
+ 
 
   resources :friendships
 
-  
+  get "project/new_release" => 'project#new_release', :as => :new_svy
 
 
 

@@ -21,6 +21,8 @@
 //= require_tree ./lib/backbone/models
 //= require_tree ./lib/backbone/collections
 //= require_tree ./lib/backbone/views
+//= require bootstrap-sprockets
+//= require bootstrap-datepicker
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require_tree .
@@ -36,4 +38,22 @@ var pageReady = function pageReady(){
 }
 
 // $(document).ready(domReady);
+
 // $(document).on('page:load', pageReady);
+
+
+var makeItWork= function(){
+	$('.dp1 input').datepicker({
+     orientation: 'top auto',
+     autoclose: true,
+     todayHighlight: true,
+     startDate: "today",
+     format: "yyyy/mm/dd"
+	});
+	$('#sumbit-button').click(function() {
+    $('#attendModal').modal('hide');
+});
+};
+
+$(document).ready(makeItWork);
+$(document).on('page:load', makeItWork);

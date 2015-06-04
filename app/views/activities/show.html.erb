@@ -1,15 +1,22 @@
-<p><%= link_to "Index", root_path %></p>
-<h1>Activity Show Page!</h1>
 
+
+<div id="activity-container" class="col-xs-7 col-xs-offset-1">
 	<h1><%= @activity.title %></h1>
 	<p>Creator: <%= @activity.creator %></p>
 	<p>Date: <%= @activity.date %> </p>
 	<p>Location: <%= @activity.location %> </p>
 	<p>Description: <%= @activity.description %> </p>
-	<p><%= link_to "Delete", activity_path(@activity), method: :delete %>
+	<p><%= link_to "Delete", activity_path(@activity), method: :delete %></p>
 		<p><%= link_to "Edit", edit_activity_path(@activity)%></p>
 
-	<p><%= link_to "Attend Activity", new_activity_activity_registration_path(@activity) %></p>
+
+<button type="button" class="btn btn-default navbar-btn" href="#attendModal" data-toggle="modal" data-no-turbolink="true">Attend Activity</button>
+
+<button type="button" class="btn btn-default navbar-btn" href="#commentModal" data-toggle="modal" data-no-turbolink="true">Add Comment</button>
+
+<%= link_to "Add Comment",  new_activity_comment_path(@activity) %>
+
+
 
 <h3>Users Attending the Activity (<%= @activity.activity_registrations.count %>)</h3>
 	<% @activity.activity_registrations.each do |f| %>
@@ -17,4 +24,60 @@
 
 	<% end %>
 
+    <h3>Comments:</h3>
+    <% @activity.comments.each do |t| %>
+    <p><%= t.user_name %>: <%= t.body %></p>
+   
+    <% end %>
+    </div>
+
+<div id="attendModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Attend Activity</h4>
+            </div>
+            <div class="modal-body">
+           <%= form_for [@activity, @new_activity_registration] do |f| %>
+
+          			<%= f.hidden_field :user_id %>
+								<%= f.hidden_field :user_name %>
+								<%= f.hidden_field :activity_id %>
+            		<p>Are you sure you want to attend this activity?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                <%= f.submit "Yes", :class => "btn btn-default", :id => "submit-button" %>
+            <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="commentModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Add a Comment</h4>
+            </div>
+            <div class="modal-body">
+           <%= form_for [@activity, @new_comment] do |f| %>
+                <%= f.hidden_field :user_id %>
+                <%= f.hidden_field :user_name %>
+                <%= f.hidden_field :activity_id %>
+                <p><%= f.text_field :body, :placeholder => "Comment" %></p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+             <%= f.submit "Sumbit", :class => "button" %>
+            <% end %>
+            </div>
+        </div>
+    </div>
+</div>
 

@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
-gem 'rails_12factor'
-
 gem 'rails-backbone'
 
 gem 'devise'
@@ -13,6 +11,13 @@ gem 'devise'
 gem 'handlebars_assets'
 
 gem 'cancancan'
+
+gem 'rails_12factor', group: :production
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
+gem 'bootstrap-datepicker-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg'

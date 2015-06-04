@@ -47,12 +47,15 @@ class ActivitiesController < ApplicationController
 # end
 
 	def index
-			@activities = Activity.all
+			@activities = Activity.all.order("date ASC")
+			@activty = Activity.all.last
 	end
 
 	def show
 		@activity = Activity.find(params[:id])
 		@activity_registration = @activity.activity_registrations.all
+		@new_activity_registration = ActivityRegistration.new
+		@new_comment = Comment.new
 	end
 
 	def new
@@ -61,9 +64,11 @@ class ActivitiesController < ApplicationController
 
 	def create
 		@activity = Activity.new(activity_params)
-		@activity.creator = current_user.email
+		@activity.creator = current_user.username
 		if @activity.save
-			redirect_to root_path
+			redirect_to @activity
+		else
+			render :new
 		end
 	end
 	def edit
@@ -72,7 +77,9 @@ class ActivitiesController < ApplicationController
 	def update
 		@activity = Activity.find(params[:id])
 		if @activity.update(activity_params)
-			redirect_to root_path
+			redirect_to @activity
+		else
+			render :edit
 		end
 	end
 

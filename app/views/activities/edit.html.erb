@@ -1,10 +1,1 @@
-<%= form_for @activity do |f| %>
-
-<p><%= f.text_field :title, :placeholder => "title" %></p>
-<%= f.hidden_field :creator %>
-<p><%= f.text_field :date, :placeholder => "date" %></p>
-<p><%= f.text_field :location, :placeholder => "location" %></p>
-<p><%= f.text_field :description, :placeholder => "description" %></p>
-
-<%= f.submit "Sumbit", :class => "button" %>
-<% end %>
+<%= render 'form' %>

@@ -1,0 +1,90 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap-datepicker
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+*{
+	margin: 0;
+	padding:0;
+	border: 0;
+	box-sizing: border-box;
+	background-color: transparent;
+	font-weight: normal;
+	font-style: inherit;
+}
+html, body{
+
+	background-image:url(get-out-and-play-background.jpg); 
+	height: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.white{
+	background: #EEE;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	min-height: 90%;
+}
+
+
+
+
+
+
+
+
+/* navbar */
+.navbar-default {
+    background-color: #3F6F93;
+    border-color: #3F6F93;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #EEE;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #FFF;
+}
+.navbar-default .navbar-text{
+	color: #EEE;
+}
+.navbar-default .navbar-btn-back{
+	background-color: #305570;
+	color: white;
+}
+.navbar-default .glyphicon, .navbar-default .caret{
+	color: #EEE;
+}
+.navbar-default .glyphicon:hover, .navbar-default .caret:hover{
+	color: #FFF;
+}
+
+.navbar-default .dropdown-menu{
+     background-color: #3F6F93;
+     color:#FFF;
+}
+.navbar-default .dropdown-menu a{
+	color: white;
+}
+
+

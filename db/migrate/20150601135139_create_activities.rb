@@ -4,7 +4,7 @@ class CreateActivities < ActiveRecord::Migration
     	t.belongs_to :user
     	t.text :creator
     	t.text :title
-    	t.text :date
+    	t.date :date
     	t.text :location
     	t.text :description
     end
