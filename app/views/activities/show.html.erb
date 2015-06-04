@@ -20,8 +20,10 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-offset-3">
+            <% if current_user.username == @activity.creator %>
             <%= link_to "Delete", activity_path(@activity), method: :delete, :class => "btn btn-default" %>
             <%= link_to "Edit", edit_activity_path(@activity), :class => "btn btn-default" %>
+            <% end %>
             <button type="button" class="btn btn-default" href="#attendModal" data-toggle="modal" data-no-turbolink="true">Attend Activity</button>
             <button type="button" class="btn btn-default" href="#commentModal" data-toggle="modal" data-no-turbolink="true">Add Comment</button>
         </div>
