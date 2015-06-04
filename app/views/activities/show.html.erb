@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-offset-3">
+        <div class="col-xs-8 col-centered">
             <% if current_user.username == @activity.creator %>
             <%= link_to "Delete", activity_path(@activity), method: :delete, :class => "btn btn-default" %>
             <%= link_to "Edit", edit_activity_path(@activity), :class => "btn btn-default" %>
