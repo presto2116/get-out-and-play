@@ -2,6 +2,7 @@
     <div class ="row">
         <div id="activity-container" class="col-sm-5 col-sm-offset-1">
             <h1><%= @activity.title %></h1>
+            <img src="<%= @activity.activity_img %>"/>
             <p>Creator: <%= @activity.creator %></p>
             <p>Date: <%= @activity.date %> </p>
             <p>Location: <%= @activity.location %> </p>
@@ -16,12 +17,13 @@
             <% @activity.comments.each do |t| %>
             <p><%= t.user_name %>: <%= t.body %></p>
             <% end %>
+
         </div>
     </div>
     <div class="row">
         <div class="col-xs-8 col-centered">
             <% if current_user.username == @activity.creator %>
-            <%= link_to "Delete", activity_path(@activity), method: :delete, :class => "btn btn-default" %>
+            <%= link_to "Delete", activity_path(@activity), method: :delete, :class => "btn btn-default", data: {confirm: "Are you sure?"} %>
             <%= link_to "Edit", edit_activity_path(@activity), :class => "btn btn-default" %>
             <% end %>
             <button type="button" class="btn btn-default" href="#attendModal" data-toggle="modal" data-no-turbolink="true">Attend Activity</button>

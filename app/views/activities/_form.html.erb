@@ -1,4 +1,4 @@
-<div id="activity-container" class="col-xs-7 col-xs-offset-1">
+<div id="activity-container" class="col-lg-8 col-lg-offset-1 white-back">
 <%= form_for @activity do |f| %>
 
 <% if @activity.errors.any? %>
@@ -9,12 +9,13 @@
 	</ul>
 <% end %>
 
-	<%= f.hidden_field :creator %>
-	<p><%= f.text_field :title, :placeholder => "title" %></p>
-	<p><div class="dp1"><%= f.text_field :date, :placeholder => "date", :data => {:provide => 'datepicker'} %></div></p>
-	<p><%= f.text_field :location, :placeholder => "location" %></p>
-	<p><%= f.text_field :description, :placeholder => "description" %></p>
+	  <%= f.hidden_field :creator %>
+    <p><%= f.text_field :title, :placeholder => "title" %></p>
+    <p><div class="dp1"><%= f.text_field :date, :placeholder => "date", :data => {:provide => 'datepicker'} %></div></p>
+    <p><%= f.text_field :location, :placeholder => "location" %></p>
+    <p><%= f.text_field :activity_img, :placeholder => "Image URL (not required)", :size => 30 %></p>
+    <p><%= f.text_area :description, :placeholder => "description", :rows => 3, :cols => 50 %></p>
 	
-<%= f.submit "Sumbit", :class => "button" %>
+<%= f.submit "Sumbit", :class => "btn btn-primary" %>
 <% end %>
 	</div>
