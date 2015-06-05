@@ -57,12 +57,22 @@ html, body{
 // 	background-repeat: no-repeat;
 // }
 
-.white{
-	background: #EEE;
+.page-container{
+
 	width: 75%;
 	margin: 0 auto 50px auto;
 }
 
+.white-back {
+	background: #eee;
+	padding: 10px;
+	padding-left: 50px;
+	margin: 30px;
+	border-radius: 20px;
+	left: 0;
+	right: 0;
+
+}
 .col-centered{
 	float: none;
     margin: 10px auto;
@@ -85,7 +95,7 @@ html, body{
 .white-foot {
    color: white;
     }
- .white-foot a:hover{
+ .white-foot:hover{
  	color: green;
  }
  
