@@ -6,13 +6,13 @@
             <p>Date: <%= @activity.date %> </p>
             <p>Location: <%= @activity.location %> </p>
             <p>Description: <%= @activity.description %> </p>
-            <h3>Users Attending the Activity (<%= @activity.activity_registrations.count %>)</h3>
+            <h4>Users Attending the Activity (<%= @activity.activity_registrations.count %>)</h4>
             <% @activity.activity_registrations.each do |f| %>
             <p><%= f.user_name %></p>
             <% end %>
         </div>
         <div id="comments" class="col-sm-5 col-sm-offset-1">
-            <h3>Comments:</h3>
+            <h4>Comments:</h4>
             <% @activity.comments.each do |t| %>
             <p><%= t.user_name %>: <%= t.body %></p>
             <% end %>
@@ -67,7 +67,7 @@
                     <%= f.hidden_field :user_id %>
                     <%= f.hidden_field :user_name %>
                     <%= f.hidden_field :activity_id %>
-                    <p><%= f.text_field :body, :placeholder => "Comment" %></p>
+                    <p><%= f.text_field :body, :placeholder => "Comment", :size => 40 %></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">No</button>

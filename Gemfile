@@ -19,6 +19,8 @@ gem 'autoprefixer-rails'
 
 gem 'bootstrap-datepicker-rails'
 
+gem 'bootswatch-rails'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets

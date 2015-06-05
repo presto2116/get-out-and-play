@@ -16,7 +16,10 @@
  */
 
 @import "bootstrap-sprockets";
+
+@import "bootswatch/cerulean/variables";
 @import "bootstrap";
+@import "bootswatch/cerulean/bootswatch";
 
 
 *{
@@ -27,6 +30,15 @@
 	background-color: transparent;
 	font-weight: normal;
 	font-style: inherit;
+}
+
+html{
+	position: relative;
+	min-height: 100%;
+}
+
+body{
+	 margin-bottom: 70px;
 }
 
 html, body{ 
@@ -56,45 +68,25 @@ html, body{
     margin: 10px auto;
 }
 
+.footer{
+	background-color: #209BE2;
+	position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  text-align: center;
+  padding: 10px;
 
-
-
-
-
-
-/* navbar */
-.navbar-default {
-    background-color: #3F6F93;
-    border-color: #3F6F93;
 }
-/* title */
-.navbar-default .navbar-brand {
-    color: #EEE;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: #FFF;
-}
-.navbar-default .navbar-text{
-	color: #EEE;
-}
-.navbar-default .navbar-btn-back{
-	background-color: #305570;
-	color: white;
-}
-.navbar-default .glyphicon, .navbar-default .caret{
-	color: #EEE;
-}
-.navbar-default .glyphicon:hover, .navbar-default .caret:hover{
-	color: #FFF;
-}
-
-.navbar-default .dropdown-menu{
-     background-color: #3F6F93;
-     color:#FFF;
-}
-.navbar-default .dropdown-menu a{
-	color: white;
-}
-
+.space{
+      padding: 10px;
+    }
+.white-foot {
+   color: white;
+    }
+ .white-foot a:hover{
+ 	color: green;
+ }
+ 
 

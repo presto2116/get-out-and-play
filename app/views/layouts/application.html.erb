@@ -76,11 +76,25 @@
 	<div id="form-container"></div>
 	<div id="activities-list"></div> -->
   <div class="container-fluid white">
-  <div class="row">
+
     <%= yield %>
-  </div>
+
 
   </div>
+  <footer class="footer">
+      <div class="container">
+        <p class="white-foot">&copy; 2015 Preston Straight
+       <a class="space"></a>
+        <a class="white-foot" href="https://github.com/presto2116">GitHub </a>
+        <a class="space"></a>
+        <a class="white-foot" href="https://www.linkedin.com/in/prestonstraight">LinkedIn </a>
+        <a class="space"></a>
+        <a class="white-foot" href="https://www.facebook.com/preston.straight">Facebook </a>
+        <a class="space"></a>
+        
+       <a class="white-foot" href="https://twitter.com/presto2116">Twitter </a></p>
+      </div>
+    </footer>
  <%= form_for Activity.new do |f| %>
  <div id="newModal" class="modal fade">
     <div class="modal-dialog">
