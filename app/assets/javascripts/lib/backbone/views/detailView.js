@@ -1,6 +1,10 @@
 var DetailView = Backbone.View.extend({
 	el: "#details",
 
+	// there's a lot of duplicated code here w/ the other view!
+	// I wonder if you couldn't just use the same view code, but have it use
+	// two separate templates... switching from detail to non-detail view
+	// would swap the active template and re-render.
 	events: {
 		'click .delete':'deleteActivity',
 		'click .edit' :'editActivity',
@@ -11,7 +15,7 @@ var DetailView = Backbone.View.extend({
 	initialize: function(){
 		console.log(this.model);
 		console.log("New details view instantiated");
-		
+
 	},
 	setActivity: function(activityToSet){
 		this.activity = activityToSet;

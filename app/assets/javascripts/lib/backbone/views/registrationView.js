@@ -9,6 +9,10 @@ setAttend: function(attendToSet){
 	console.log(this.attend);
 	console.log(currentUser.id);
 	var data = {
+		// do you need to fetch / send the current user id?
+		// can't your rails app just use current_user as defined?
+		// that also prevents users from setting this user_id themselves
+		// (thus registering someone else maliciously)
 		user_id: currentUser.id,
 		activity_id: this.attend.id
 	};
@@ -19,4 +23,3 @@ setAttend: function(attendToSet){
 			this.$el.html(renderedHTML);
 	}
 })
-

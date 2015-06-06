@@ -1,5 +1,7 @@
 <%= form_for [@activity, @activity_registration] do |f| %>
 
+<!-- I don't think you need to send the user_id here, again, that should
+be looked up using current_user on the server side! (which is what you're doing) -->
 <%= f.hidden_field :user_id %>
 <%= f.hidden_field :user_name %>
 <%= f.hidden_field :activity_id %>

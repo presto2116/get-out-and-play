@@ -9,7 +9,8 @@ class ActivityRegistrationsController < ApplicationController
   end
 
   def create
-
+    # I see that (per my comment in your BB code), you're actually using
+    # the current_user as defined in rails. That's good!
     @activity_registration = @activity.activity_registrations.find_or_create_by(:user_id => current_user.id)
     @activity_registration.user_id = current_user.id
     @activity_registration.user_name = current_user.username
@@ -27,4 +28,3 @@ class ActivityRegistrationsController < ApplicationController
     @activity = Activity.find(params[:activity_id])
   end
 end
-
