@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
  # add username to devise
  before_filter :configure_permitted_parameters, if: :devise_controller?
+  # keep your indentation clean!
 
   protected
 
@@ -16,7 +17,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-  
+  # again with indentation! also, be mindful of extra / erratic whitespace (newlines)
     after_filter :set_access_control_headers
   def set_access_control_headers
       headers['Access-Control-Allow-Origin'] = "*"

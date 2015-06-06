@@ -41,7 +41,8 @@ var pageReady = function pageReady(){
 
 // $(document).on('page:load', pageReady);
 
-
+// maybe give this a clearer name? as it is, it makes me thing this function
+// is some sort of work-around...
 var makeItWork= function(){
 	$('.dp1 input').datepicker({
      orientation: 'top auto',
