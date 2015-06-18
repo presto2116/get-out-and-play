@@ -2,7 +2,7 @@
 
 	<% @activities.select{|s| s.date >= Date.current}.each do |activity| %>
 	<div class="white-back row">
-	<div class="col-md-6">
+	<div class="col-sm-6">
 	<h1><%= activity.title %></h1>
 	<p>Creator: <%= activity.creator %></p>
 	<p>Date: <%= activity.date %> </p>
@@ -13,7 +13,7 @@
 	<p><%= link_to "Show Details", new_user_registration_path %></p>
 	<% end %>
 		</div>
-		<div class="col-md-6">
+		<div class="col-sm-6">
 
 		<br>
 		<img class="big" src="<%= activity.activity_img %>"/>

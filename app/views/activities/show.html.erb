@@ -2,7 +2,7 @@
     <div class ="row">
         <div id="activity-container" class="col-sm-5 col-sm-offset-1">
             <h1><%= @activity.title %></h1>
-            <img src="<%= @activity.activity_img %>"/>
+            <img class="show-img" src="<%= @activity.activity_img %>"/>
             <p>Creator: <%= @activity.creator %></p>
             <p>Date: <%= @activity.date %> </p>
             <p>Location: <%= @activity.location %> </p>
@@ -27,6 +27,7 @@
             <%= link_to "Edit", edit_activity_path(@activity), :class => "btn btn-default" %>
             <% end %>
             <button type="button" class="btn btn-default" href="#attendModal" data-toggle="modal" data-no-turbolink="true">Attend Activity</button>
+           
             <button type="button" class="btn btn-default" href="#commentModal" data-toggle="modal" data-no-turbolink="true">Add Comment</button>
         </div>
     </div>
@@ -47,6 +48,7 @@
                 <p>Are you sure you want to attend this activity?
                 </div>
                 <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">No</button> -->
                     <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">No</button>
                     <%= f.submit "Yes", :class => "btn btn-default btn-success", :id => "submit-button" %>
                     <% end %>
@@ -72,7 +74,6 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Cancel</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                     <%= f.submit "Sumbit", :class => "btn btn-default btn-success" %>
                     <% end %>
                 </div>

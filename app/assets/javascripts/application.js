@@ -42,7 +42,7 @@ var pageReady = function pageReady(){
 // $(document).on('page:load', pageReady);
 
 
-var makeItWork= function(){
+var datePicker= function(){
 	$('.dp1 input').datepicker({
      orientation: 'top auto',
      autoclose: true,
@@ -55,5 +55,5 @@ var makeItWork= function(){
 });
 };
 
-$(document).ready(makeItWork);
-$(document).on('page:load', makeItWork);
+$(document).ready(datePicker);
+$(document).on('page:load', datePicker);
