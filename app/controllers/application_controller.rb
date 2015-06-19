@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
- # add username to devise
- before_filter :configure_permitted_parameters, if: :devise_controller?
+# Prevent CSRF attacks by raising an exception.
+# For APIs, you may want to use :null_session instead.
+# add username to devise
+  before_filter :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
@@ -12,19 +12,15 @@ class ApplicationController < ActionController::Base
   end
   # end of add username to devise
 
-
   protect_from_forgery with: :exception
-
-
-  
-    after_filter :set_access_control_headers
+  after_filter :set_access_control_headers
   def set_access_control_headers
-      headers['Access-Control-Allow-Origin'] = "*"
-      headers['Access-Control-Request-Method'] = %w{GET POST OPTIONS}.join(",")
+    headers['Access-Control-Allow-Origin'] = "*"
+    headers['Access-Control-Request-Method'] = %w{GET POST OPTIONS}.join(",")
   end
 
   def index
-  	render layout: 'application', text: ''
+    render layout: 'application', text: ''
 
   end
 end

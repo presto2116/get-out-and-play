@@ -20,7 +20,6 @@ class ActivityRegistrationsController < ApplicationController
   end
   def destroy
     @activity_registration = @activity.activity_registrations.find_by(:user_id => current_user.id)
-
     if @activity_registration.destroy
       redirect_to @activity
     end
