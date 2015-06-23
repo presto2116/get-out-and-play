@@ -1,6 +1,6 @@
-  <% @activities.reverse_each do |activity| %>
-  <h1><%= activity.title %></h1>
-  <p>Creator: <%= activity.creator %></p>
-  <p>Date: <%= activity.date %> </p>
-  <p><%= link_to "Show Details", activity_path(activity)%></p>
-  <% end %>
+<% @activities.reverse_each do |activity| %>
+	<h1><%= activity.title %></h1>
+	<p>Creator: <%= activity.creator %></p>
+	<p>Date: <%= activity.date %> </p>
+	<p><%= link_to "Show Details", activity_path(activity)%></p>
+<% end %>

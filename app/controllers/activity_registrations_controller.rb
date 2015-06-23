@@ -9,7 +9,6 @@ class ActivityRegistrationsController < ApplicationController
   end
 
   def create
-
     @activity_registration = @activity.activity_registrations.find_or_create_by(:user_id => current_user.id)
     @activity_registration.user_id = current_user.id
     @activity_registration.user_name = current_user.username
@@ -18,6 +17,7 @@ class ActivityRegistrationsController < ApplicationController
         redirect_to @activity
       end
   end
+
   def destroy
     @activity_registration = @activity.activity_registrations.find_by(:user_id => current_user.id)
     if @activity_registration.destroy

@@ -1,25 +1,25 @@
 
 
-	<% @activities.select{|s| s.date >= Date.current}.each do |activity| %>
-	<div class="white-back row">
+<% @activities.select{|s| s.date >= Date.current}.each do |activity| %>
+<div class="white-back row">
 	<div class="col-sm-6 fonty">
-	<h1><%= activity.title %></h1>
-	<p>Creator: <%= activity.creator %></p>
-	<p>Date: <%= activity.date %> </p>
-	<p>Users Attending the Activity (<%= activity.activity_registrations.count %>)</p>
-	<% if current_user %>
-	<p><%= link_to "Show Details", activity_path(activity)%></p>
-	<% else %>
-	<p><%= link_to "Show Details", new_user_registration_path %></p>
-	<% end %>
-		</div>
-		<div class="col-sm-6 image-size">
+		<h1><%= activity.title %></h1>
+		<p>Creator: <%= activity.creator %></p>
+		<p>Date: <%= activity.date %> </p>
+		<p>Users Attending the Activity (<%= activity.activity_registrations.count %>)</p>
+		<% if current_user %>
+		<p><%= link_to "Show Details", activity_path(activity)%></p>
+		<% else %>
+		<p><%= link_to "Show Details", new_user_registration_path %></p>
+		<% end %>
+	</div>
+	<div class="col-sm-6 image-size">
 
 		<br>
 		<img class="big" src="<%= activity.activity_img %>"/>
-		</div>
 	</div>
-	<% end %>
+</div>
+<% end %>
 
 
 
